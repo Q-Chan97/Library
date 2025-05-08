@@ -13,7 +13,11 @@ function Book (title, author, pages, status) {
     this.id = crypto.randomUUID();
 };
 
-const eragon = new Book('Eragon', 'Christopher Paolini', 509, 'read');
+function addBookToLibrary(title, author, pages, status) {
+    const libraryBook = new Book(title, author, pages, status); // Pull constructor properties
+    myLibrary.push(libraryBook); // send new Book to our array
+}
 
-console.log(eragon.info());
-console.log(eragon.id);
+addBookToLibrary("Eragon", "Christoper Paolini", 509, "read");
+
+console.log(myLibrary);
