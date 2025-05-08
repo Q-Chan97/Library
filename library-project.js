@@ -1,6 +1,10 @@
 const myLibrary = [];
 
 function Book (title, author, pages, status) {
+    if(!new.target) {
+        throw Error("Must use New operator");
+    }
+    
     this.title = title;
     this.author = author;
     this.pages = pages;
