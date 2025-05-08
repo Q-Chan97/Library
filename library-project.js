@@ -9,11 +9,11 @@ function Book (title, author, pages, isRead) {
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
-
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead}.`;
-    }
 };
+
+Book.prototype.info = function() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ` (+ this.isRead ? "read" : "not read");
+}
 
 function addBookToLibrary(title, author, pages, isRead) {
     const libraryBook = new Book(title, author, pages, isRead); // Pull constructor properties
@@ -22,5 +22,4 @@ function addBookToLibrary(title, author, pages, isRead) {
 }
 
 addBookToLibrary("Eragon", "Christoper Paolini", 509, true);
-
-console.log(myLibrary);
+addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", 234, false);
