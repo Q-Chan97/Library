@@ -23,3 +23,8 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 addBookToLibrary("Eragon", "Christoper Paolini", 509, true);
 addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", 234, false);
+addBookToLibrary("Garfield At Large", "Jim Davis", 96, true);
+addBookToLibrary("Animal Farm", "George Orwell", 92, true);
+addBookToLibrary("The Grapes of Wrath", "John Steinbeck", 464, false);
+addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 206, true);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
