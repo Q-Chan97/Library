@@ -40,10 +40,11 @@
     font-size: 2rem;
 }
 
-#body {
+#main-content {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 1px solid orange; /* Guideline border */
