@@ -60,5 +60,10 @@
 
 .card {
     background-color: white;
-    border: 1px solid magenta;
+    border-left: 7px solid brown;
+    border-right: 7px solid brown;
+    border-radius: 10px;
+    padding-left: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid magenta; */
 }
