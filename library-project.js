@@ -47,3 +47,10 @@ function displayBook() {
 }
 
 displayBook();
+
+const bookDialog = document.getElementById("book-dialog");
+const newBookBtn = document.getElementById("new-book-button");
+
+newBookBtn.addEventListener("click", () => {
+    bookDialog.showModal();
+});
