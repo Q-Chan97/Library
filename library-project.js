@@ -28,3 +28,22 @@ addBookToLibrary("Animal Farm", "George Orwell", 92, true);
 addBookToLibrary("The Grapes of Wrath", "John Steinbeck", 464, false);
 addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 206, true);
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
+
+function displayBook() {
+    const cardContainer = document.getElementById("card-container"); // Get card container div
+
+    myLibrary.forEach((book) => {
+        let card = document.createElement("div"); // Create new book card
+        card.classList.add("card"); // Give it the card class
+        card.innerHTML = // set all the HTML on the inside of the book card
+        ` 
+            <h2>${book.title}</h2>
+            <p>Author: ${book.author}</p>
+            <p>Pages: ${book.pages}</p>
+            <p>Status: ${book.isRead ? "Read" : "Not read"}
+        `;
+        cardContainer.appendChild(card); // Append new card as a child of the card container div
+    });
+}
+
+displayBook();
