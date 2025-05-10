@@ -36,13 +36,23 @@ function displayBook() {
     myLibrary.forEach((book) => {
         let card = document.createElement("div"); // Create new book card
         card.classList.add("card"); // Give it the card class
-        card.innerHTML = // set all the HTML on the inside of the book card
-        ` 
-            <h2>${book.title}</h2>
-            <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <p>Status: ${book.isRead ? "Read" : "Not read"}
-        `;
+       
+        const cardTitle = document.createElement("h2"); // Append all the HTML on the inside of the book card
+        cardTitle.textContent = book.title;
+        card.appendChild(cardTitle);
+
+        const cardAuthor = document.createElement("p");
+        cardAuthor.textContent = `By ${book.author}`;
+        card.appendChild(cardAuthor);
+
+        const cardPages = document.createElement("p");
+        cardPages.textContent = `${book.pages} pages`;
+        card.appendChild(cardPages);
+
+        const cardStatus = document.createElement("p");
+        cardStatus.textContent = book.isRead ? "Read" : "Not read";
+        card.appendChild(cardStatus);
+
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
 }
