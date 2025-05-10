@@ -60,10 +60,10 @@ const bookForm = document.getElementById("book-form");
 bookForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const title = document.getElementById("title"); // Finds all the inputs from the dialog modal
-    const author = document.getElementById("author");
-    const pages = document.getElementById("pages");
-    const status = document.getElementById("status");
+    const title = document.getElementById("title").value; // Finds all the inputs from the dialog modal
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const status = document.getElementById("status").value;
 
     addBookToLibrary(title, author, pages, status); // Uses inputs as arguments in addBookToLibrary function
     displayBook();
