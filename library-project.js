@@ -31,6 +31,7 @@ addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
 
 function displayBook() {
     const cardContainer = document.getElementById("card-container"); // Get card container div
+    cardContainer.innerHTML = ""; // Stops the prebuilt books in the array from repeating themselves
 
     myLibrary.forEach((book) => {
         let card = document.createElement("div"); // Create new book card
