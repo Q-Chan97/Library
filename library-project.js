@@ -54,3 +54,19 @@ const newBookBtn = document.getElementById("new-book-button");
 newBookBtn.addEventListener("click", () => {
     bookDialog.showModal();
 });
+
+const bookForm = document.getElementById("book-form");
+
+bookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById("title"); // Finds all the inputs from the dialog modal
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
+    const status = document.getElementById("status");
+
+    addBookToLibrary(title, author, pages, status); // Uses inputs as arguments in addBookToLibrary function
+    displayBook();
+    bookForm.reset(); // Clears form
+    bookDialog.close(); // Closes modal
+});
