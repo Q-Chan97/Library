@@ -63,7 +63,7 @@ bookForm.addEventListener("submit", (event) => {
     const title = document.getElementById("title").value; // Finds all the inputs from the dialog modal
     const author = document.getElementById("author").value;
     const pages = document.getElementById("pages").value;
-    const status = document.getElementById("status").value;
+    const status = document.getElementById("status").checked; // Returns true or false for checkbox
 
     addBookToLibrary(title, author, pages, status); // Uses inputs as arguments in addBookToLibrary function
     displayBook();
