@@ -53,6 +53,15 @@ function displayBook() {
         cardStatus.textContent = book.isRead ? "Read" : "Not read";
         card.appendChild(cardStatus);
 
+        const removeBtn = document.createElement("button");
+        removeBtn.value = "delete";
+        removeBtn.innerText = "Delete book";
+        card.appendChild(removeBtn);
+
+        removeBtn.addEventListener("click", () => {
+            card.remove();
+        });
+
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
 }
