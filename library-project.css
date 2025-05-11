@@ -68,3 +68,11 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     /* border: 1px solid magenta; */
 }
+
+.remove-button {
+    background-color: rgb(245, 101, 101);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+}
