@@ -78,6 +78,15 @@
     font-size: 1.5rem;
 }
 
+#new-book-button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#new-book-button:active {
+    background-color: green;
+}
+
 .remove-button {
     background-color: rgb(209, 48, 48);
     color: white;
@@ -86,10 +95,20 @@
     padding: 6px;
 }
 
+.remove-button:hover {
+    background-color: rgb(170, 0, 0);
+    cursor: pointer;
+}
+
 .toggle-button {
     background-color: rgb(8, 145, 230);
     color: white;
     border: none;
     border-radius: 5px;
     padding: 6px;
+}
+
+.toggle-button:hover {
+    background-color: rgb(9, 120, 189);
+    cursor: pointer;
 }
