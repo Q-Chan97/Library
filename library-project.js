@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book (title, author, pages, isRead) {
     if(!new.target) {
@@ -29,6 +29,13 @@ addBookToLibrary("The Grapes of Wrath", "John Steinbeck", 464, false);
 addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 206, true);
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
 
+function removeBook (bookId) {
+    myLibrary = myLibrary.filter(Book => {
+        return Book.id !== bookId; // Singles out parameter ID and returns array without it
+    });
+    displayBook(); // Refreshes display
+};
+
 function displayBook() {
     const cardContainer = document.getElementById("card-container"); // Get card container div
     cardContainer.innerHTML = ""; // Stops the prebuilt books in the array from repeating themselves
@@ -58,12 +65,12 @@ function displayBook() {
         removeBtn.innerText = "Delete book";
         card.appendChild(removeBtn);
 
+        removeBtn.addEventListener("click", () => removeBook(book.id));
+
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
 }
-myLibrary.forEach((Book) => {
-    console.log(Book.id);
-});
+
 displayBook();
 
 const bookDialog = document.getElementById("book-dialog");
