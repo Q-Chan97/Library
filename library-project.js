@@ -109,7 +109,7 @@ bookForm.addEventListener("submit", (event) => {
     const status = document.getElementById("status").checked; // Returns true or false for checkbox
 
 
-    if (!title || !pages || isNaN(pages)) {
+    if (!title || !author || isNaN(pages)) {
         alert("Please fill in book title, author and page count");
         return
     }
