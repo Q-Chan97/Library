@@ -71,19 +71,19 @@ function displayBook() {
         cardStatus.textContent = book.isRead ? "Read" : "Not read";
         card.appendChild(cardStatus);
 
-        const removeBtn = document.createElement("button");
-        removeBtn.classList.add("remove-button");
-        removeBtn.innerText = "Delete book";
-        card.appendChild(removeBtn);
-
-        removeBtn.addEventListener("click", () => removeBook(book.id));
-
         const toggleBtn = document.createElement("button");
         toggleBtn.classList.add("toggle-button");
         toggleBtn.innerText = "Change read status";
         card.appendChild(toggleBtn);
 
         toggleBtn.addEventListener("click", () => book.toggleRead());
+
+        const removeBtn = document.createElement("button");
+        removeBtn.classList.add("remove-button");
+        removeBtn.innerText = "Delete book";
+        card.appendChild(removeBtn);
+
+        removeBtn.addEventListener("click", () => removeBook(book.id));
 
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
