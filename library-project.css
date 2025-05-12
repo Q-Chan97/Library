@@ -21,7 +21,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid blue; /* Guideline Border */
 }
 
 #head-box {
@@ -47,7 +46,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border: 1px solid orange; /* Guideline border */
 }
 
 #card-container {
@@ -56,7 +54,6 @@
     grid-auto-rows: max-content;
     gap: 30px;
     width: 90%;
-    border: 1px solid red; /* Guideline border */
 }
 
 .card {
@@ -70,7 +67,6 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     height: 100%;
     padding: 0px 10px 10px 10px;
-    /* border: 1px solid magenta; */
 }
 
 #new-book-button {
