@@ -119,3 +119,9 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.reset(); // Clears form
     bookDialog.close(); // Closes modal
 });
+
+const cancelBook = document.getElementById("dialog-cancel-button");
+
+cancelBook.addEventListener("click", () => {
+    bookDialog.close();
+})
