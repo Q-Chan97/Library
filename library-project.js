@@ -36,6 +36,17 @@ function removeBook (bookId) {
     displayBook(); // Refreshes display
 };
 
+Book.prototype.toggleRead = function() {
+    if (this.isRead == true) {
+        this.isRead = false;
+    }
+
+    else {
+        this.isRead = true;
+    }
+    displayBook(); // Refreshes display
+}
+
 function displayBook() {
     const cardContainer = document.getElementById("card-container"); // Get card container div
     cardContainer.innerHTML = ""; // Stops the prebuilt books in the array from repeating themselves
@@ -71,6 +82,8 @@ function displayBook() {
         toggleBtn.classList.add("toggle-button");
         toggleBtn.innerText = "Change read status";
         card.appendChild(toggleBtn);
+
+        toggleBtn.addEventListener("click", () => book.toggleRead());
 
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
