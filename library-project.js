@@ -98,6 +98,12 @@ newBookBtn.addEventListener("click", () => {
     bookDialog.showModal();
 });
 
+const cancelBook = document.getElementById("dialog-cancel-button");
+
+cancelBook.addEventListener("click", () => {
+    bookDialog.close();
+})
+
 const bookForm = document.getElementById("book-form");
 
 bookForm.addEventListener("submit", (event) => {
@@ -108,10 +114,12 @@ bookForm.addEventListener("submit", (event) => {
     const pages = document.getElementById("pages").value;
     const status = document.getElementById("status").checked; // Returns true or false for checkbox
 
+    if (!title || !author) {
+        return alert("Please fill in book title and author");
+    };
 
-    if (!title || !author || isNaN(pages)) {
-        alert("Please fill in book title, author and page count");
-        return
+    if (pages < 1) {
+        return alert("Page number must be at least 1");
     }
 
     addBookToLibrary(title, author, pages, status); // Uses inputs as arguments in addBookToLibrary function
@@ -119,9 +127,3 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.reset(); // Clears form
     bookDialog.close(); // Closes modal
 });
-
-const cancelBook = document.getElementById("dialog-cancel-button");
-
-cancelBook.addEventListener("click", () => {
-    bookDialog.close();
-})
