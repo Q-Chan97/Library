@@ -69,6 +69,16 @@
     /* border: 1px solid magenta; */
 }
 
+#new-book-button {
+    background-color: rgb(16, 188, 16);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
 .remove-button {
     background-color: rgb(209, 48, 48);
     color: white;
