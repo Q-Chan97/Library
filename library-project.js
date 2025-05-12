@@ -67,6 +67,11 @@ function displayBook() {
 
         removeBtn.addEventListener("click", () => removeBook(book.id));
 
+        const toggleBtn = document.createElement("button");
+        toggleBtn.classList.add("toggle-button");
+        toggleBtn.innerText = "Change read status";
+        card.appendChild(toggleBtn);
+
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
 }

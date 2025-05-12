@@ -76,3 +76,11 @@
     border-radius: 5px;
     padding: 6px;
 }
+
+.toggle-button {
+    background-color: rgb(8, 145, 230);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+}
