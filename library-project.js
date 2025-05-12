@@ -9,6 +9,7 @@ function Book (title, author, pages, isRead) {
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
+    this.id = crypto.randomUUID(); // Generates random id for each book
 };
 
 Book.prototype.info = function() {
@@ -18,7 +19,6 @@ Book.prototype.info = function() {
 function addBookToLibrary(title, author, pages, isRead) {
     const libraryBook = new Book(title, author, pages, isRead); // Pull constructor properties
     myLibrary.push(libraryBook); // send new Book to our array
-    this.id = crypto.randomUUID(); // Creates unique ID on creation of book
 }
 
 addBookToLibrary("Eragon", "Christoper Paolini", 509, true);
@@ -61,7 +61,9 @@ function displayBook() {
         cardContainer.appendChild(card); // Append new card as a child of the card container div
     });
 }
-
+myLibrary.forEach((Book) => {
+    console.log(Book.id);
+});
 displayBook();
 
 const bookDialog = document.getElementById("book-dialog");
