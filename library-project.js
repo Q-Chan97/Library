@@ -114,16 +114,51 @@ bookForm.addEventListener("submit", (event) => {
     const pages = document.getElementById("pages").value;
     const status = document.getElementById("status").checked; // Returns true or false for checkbox
 
-    if (!title || !author) {
-        return alert("Please fill in book title and author");
-    };
+    // if (!title || !author) {
+    //     return alert("Please fill in book title and author");
+    // };
 
-    if (pages < 1) {
-        return alert("Page number must be at least 1");
-    }
+    // if (pages < 1) {
+    //     return alert("Page number must be at least 1");
+    // }
+})
 
     addBookToLibrary(title, author, pages, status); // Uses inputs as arguments in addBookToLibrary function
     displayBook();
     bookForm.reset(); // Clears form
     bookDialog.close(); // Closes modal
-});
+
+
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pagesInput = document.getElementById("pages");
+
+titleInput.addEventListener("input", () => {
+    if (!titleInput.checkValidity()) {
+        titleInput.setCustomValidity("You need to put in a title here")
+        titleInput.reportValidity();
+    }
+    else {
+        titleInput.setCustomValidity("");
+    }
+})
+
+author.addEventListener("input", () => {
+    if (!authorInput.checkValidity()) {
+        authorInput.setCustomValidity("You need to put in an author here");
+        authorInput.reportValidity();
+    }
+    else {
+        authorInput.setCustomValidity("");
+    }
+})
+
+pagesInput.addEventListener("input", () => {
+    if (!pagesInput.checkValidity()) {
+        pagesInput.setCustomValidity("You need at least 1 page here");
+        pagesInput.reportValidity();
+    }
+    else {
+        pagesInput.setCustomValidity("");
+    }
+})
